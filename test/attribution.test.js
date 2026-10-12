@@ -28,6 +28,12 @@ test("simplified DevX onboarding text maps to its source", () => {
   });
 });
 
+test("SISE Link footer text maps to its source", () => {
+  assert.deepEqual(classifySource("Hola SISE"), {
+    sourceSurface: "sise_web_legacy",
+  });
+});
+
 test("outer whitespace does not change a recognized source", () => {
   assert.deepEqual(classifySource("  Try it out\n"), {
     sourceSurface: "simplified_devx_onboarding",
@@ -44,6 +50,7 @@ test("unrelated and tokenized messages do not produce attribution", () => {
     "try it out",
     "Try it out [A7]",
     "Get started [A7]",
+    "hola sise",
   ]) {
     assert.equal(classifySource(textBody), null);
   }

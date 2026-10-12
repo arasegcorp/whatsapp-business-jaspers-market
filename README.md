@@ -8,6 +8,8 @@ Jasper's Market is a fictional grocery brand created to showcase key features of
 
 Keep the existing link above for the Developer Docs QR placement. It prefills `Get started`, which the application attributes to `developer_docs`. For simplified DevX onboarding, [use this link](https://wa.me/15558813169?text=Try%20it%20out) to prefill `Try it out`, which is attributed to `simplified_devx_onboarding`.
 
+For SISE Link, the footer of SISE Web Legacy (`Seguros_2026.master`) opens `https://wa.me/<number>?text=Hola%20SISE`, which is attributed to `sise_web_legacy`. SISE Link is still in development: the footer link is behind the `SISELinkHabilitado` app setting (on in DEV, off in PRD), and its `SISELinkMensaje` setting must stay equal to `Hola SISE`.
+
 The application writes one JSON event to stdout after the user sends either recognized phrase. AppRunner forwards stdout to CloudWatch Logs. Matching is case-sensitive after trimming surrounding whitespace. Other messages, including edited phrases and older tokenized formats, do not produce attribution events.
 
 The event name is `entry_source_attributed`. Its fields are `schema_version`, `source_surface`, `inbound_message_id`, `receiver_phone_number_id`, and `event_timestamp`. The event does not include the sender phone number or raw message text. This measures attributed conversation starts, not QR scans or link opens.

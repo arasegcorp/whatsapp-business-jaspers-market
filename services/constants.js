@@ -11,6 +11,8 @@ module.exports = Object.freeze({
   // Expected messages from the user
   USER_START_MESSAGE: "Get started",
   USER_TRY_OUT_MESSAGE: "Try it out",
+  // Prefilled by the SISE Link footer in SISE Web Legacy (SISELinkMensaje).
+  USER_SISE_LINK_MESSAGE: "Hola SISE",
 
   // Response messages
   APP_DEFAULT_MESSAGE: "Welcome to Jasper's Market! What can we help you with today?",
